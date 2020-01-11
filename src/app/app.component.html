@@ -1,0 +1,36 @@
+
+    <span>{{ title }} app is running!</span>
+
+      <div class="container">
+
+        <h2>Profile Picture Upload</h2>
+      
+        <div class="row">
+          <div class="col">
+            <app-profile-picture [(url)]=picurl [editmode]=editEnabled></app-profile-picture>
+            <!-- app-profile-picture><h1>Profile picture here</h1></app-profile-picture -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+              <div class="form-group">
+                <label for="cbeditmode">Edit mode</label>
+                <input #cbeditmode id="cbeditmode" [checked]="editEnabled" (change)="editEnabled=cbeditmode.checked" type="checkbox">
+              </div>
+              <button class="button" (click)="clear()">Clear</button>
+              {{picurl}}
+          </div>
+        </div>
+      </div>
+      
+      <table>
+        <tr>
+          <td>Name: {{name}}</td>
+        </tr>
+        <tr>
+          <td>Username: {{username}}</td>
+        </tr>
+        <tr>
+          <button mat-raised-button>Sign out</button>
+        </tr>
+      </table>
